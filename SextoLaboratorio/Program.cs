@@ -46,13 +46,13 @@ namespace SextoLaboratorio
                     Console.WriteLine("Cerrando archivo...");
                     Thread.Sleep(2000);
                 }
-                Console.Clear();
                 Console.WriteLine("Quiere salir del programa?(si/no)");
                 string a = Console.ReadLine();
                 if (a == "si")
                 {
                     exec = false;
                 }
+                Console.Clear();
             }
         }
         static public void addEmpresa(List<Empresa> empresas)
