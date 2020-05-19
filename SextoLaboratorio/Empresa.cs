@@ -17,6 +17,8 @@ namespace SextoLaboratorio
         }
         public override string ToString()
         {
+            int i = 0;
+            int r = 0;
             string division = "";
             string persona1 = "";
             string depto = "";
@@ -69,14 +71,14 @@ namespace SextoLaboratorio
                 }
                 if (t == typeof(Bloque))
                 {
-                    bloque1 = a.GetName();
-                    persona3 = a.GetPersonaName();
-                    if (persona3 == persona2)
+                    if (i == 4)
                     {
+                        bloque1 = a.GetName();
                         persona3 = a.GetPersonaName();
                         break;
                     }
                 }
+                i += 1;
             }
             foreach (Division a in divisiones)
             {
@@ -96,14 +98,14 @@ namespace SextoLaboratorio
                 }
                 if (t == typeof(Bloque))
                 {
-                    bloque2 = a.GetName();
-                    persona4 = a.GetPersonaName();
-                    if (persona4 == persona3)
+                    if (r == 5)
                     {
+                        bloque2 = a.GetName();
                         persona4 = a.GetPersonaName();
                         break;
                     }
                 }
+                r += 1;
             }
             foreach (Division a in divisiones)
             {
