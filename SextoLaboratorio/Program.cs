@@ -57,11 +57,73 @@ namespace SextoLaboratorio
         }
         static public void addEmpresa(List<Empresa> empresas)
         {
-            Console.Write("Ingrese el nombre de la empresa:");
+            List<Division> divisiones = new List<Division>();
+            Console.WriteLine("Ingrese el nombre de la empresa:");
             string name = Console.ReadLine();
-            Console.Write("Ingrese el rut de la empresa:");
+            Console.WriteLine("Ingrese el rut de la empresa:");
             string rut = Console.ReadLine();
-            empresas.Add(new Empresa(name, rut));
+            Console.WriteLine("Ingrese el nombre de la division:");
+            string division = Console.ReadLine();
+            Console.WriteLine("Ingrese el nombre del encargado:");
+            string nombreencargado = Console.ReadLine();
+            Console.WriteLine("Ingrese el apellido del encargado:");
+            string apellidoencargado = Console.ReadLine();
+            Console.WriteLine("Ingrese el rut del encargado:");
+            string rutencargado = Console.ReadLine();
+            Console.WriteLine("Ingrese nombre del area:");
+            string area = Console.ReadLine();
+            Console.WriteLine("Ingrese nombre del departamento:");
+            string depto = Console.ReadLine();
+            Console.WriteLine("Ingrese nombre de la seccion:");
+            string seccion = Console.ReadLine();
+            Console.WriteLine("Ingrese el nombre del bloque 1:");
+            string bloque1 = Console.ReadLine();
+            Console.WriteLine("Ingrese el nombre del personal 1 del bloque 1:");
+            string nombrepersonal11 = Console.ReadLine();
+            Console.WriteLine("Ingrese el apellido del personal 1 del bloque 1:");
+            string apellidopersonal11 = Console.ReadLine();
+            Console.WriteLine("Ingrese el rut del personal 1 del bloque 1:");
+            string rutpersonal11 = Console.ReadLine();
+            Console.WriteLine("Ingrese el nombre del personal 2 del bloque 1:");
+            string nombrepersonal21 = Console.ReadLine();
+            Console.WriteLine("Ingrese el apellido del personal 2 del bloque 1:");
+            string apellidopersonal21 = Console.ReadLine();
+            Console.WriteLine("Ingrese el rut del personal 2 del bloque 1:");
+            string rutpersonal21 = Console.ReadLine();
+            Console.WriteLine("Ingrese el nombre del bloque 2:");
+            string bloque2 = Console.ReadLine();
+            Console.WriteLine("Ingrese el nombre del personal 1 del bloque 2:");
+            string nombrepersonal12 = Console.ReadLine();
+            Console.WriteLine("Ingrese el apellido del personal 1 del bloque 2:");
+            string apellidopersonal12 = Console.ReadLine();
+            Console.WriteLine("Ingrese el rut del personal 1 del bloque 2:");
+            string rutpersonal12 = Console.ReadLine();
+            Console.WriteLine("Ingrese el nombre del personal 2 del bloque 2:");
+            string nombrepersonal22 = Console.ReadLine();
+            Console.WriteLine("Ingrese el apellido del personal 2 del bloque 2:");
+            string apellidopersonal22 = Console.ReadLine();
+            Console.WriteLine("Ingrese el rut del personal 2 del bloque 2:");
+            string rutpersonal22 = Console.ReadLine();
+            Persona encargado = new Persona(nombreencargado, apellidoencargado, rutencargado, "Encargado");
+            Persona personal1 = new Persona(nombrepersonal11, apellidopersonal11, rutpersonal11, "Personal 1");
+            Persona personal2 = new Persona(nombrepersonal21, apellidopersonal21, rutpersonal21, "Personal 2");
+            Persona personal3 = new Persona(nombrepersonal12, apellidopersonal12, rutpersonal12, "Personal 3");
+            Persona personal4 = new Persona(nombrepersonal22, apellidopersonal22, rutpersonal22, "Personal 4");
+            Division division1 = new Division(division, encargado);
+            Departamento depto1 = new Departamento(depto, encargado);
+            Seccion seccion1 = new Seccion(seccion, encargado);
+            Bloque bloque11 = new Bloque(bloque1, personal1, personal1, personal1);
+            Bloque bloque12 = new Bloque(bloque1, personal2, personal2, personal2);
+            Bloque bloque21 = new Bloque(bloque2, personal3, personal3, personal3);
+            Bloque bloque22 = new Bloque(bloque2, personal4, personal4, personal4);
+            divisiones.Add(division1);
+            divisiones.Add(depto1);
+            divisiones.Add(seccion1);
+            divisiones.Add(bloque11);
+            divisiones.Add(bloque12);
+            divisiones.Add(bloque21);
+            divisiones.Add(bloque22);
+            empresas.Add(new Empresa(name, rut, divisiones));
         }
         static public void showEmpresa(List<Empresa> empresas)
         {
